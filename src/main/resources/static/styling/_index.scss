@@ -1,0 +1,31 @@
+.hf-image {
+  width: 50rem;
+
+  @media only screen and (max-width: $break-medium) {
+    width: 100%;
+    margin: 1.6rem;
+  }
+}
+
+.welcome, .map-container {
+  display: flex;
+  margin-bottom: 2rem;
+
+  @media only screen and (max-width: $break-medium) {
+    flex-direction: column;
+  }
+}
+
+.address {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+
+  @media only screen and (max-width: $break-medium) {
+    width: 100%;
+    margin: 2rem 0;
+  }
+}

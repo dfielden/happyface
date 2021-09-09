@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=0"/>
+  <link rel="stylesheet" href="styling/main.css">
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Raleway&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/558b08b205.js" crossorigin="anonymous"></script>
+  <title>Welcome</title>
+</head>
+<body>
+<div class="header">
+  <ul class="nav-bar">
+    <div class="nav-bar--left">
+      <a href="/"><li class="nav-item" id="about-us">About us</li></a>
+      <a href="/products"><li class="nav-item" id="products">Products</li></a>
+      <a href="/contact"><li class="nav-item" id="contact-us">Contact us</li></a>
+
+    </div>
+    <div class="nav-bar--right">
+
+    </div>
+  </ul>
+</div>
+
+<h1 class="heading-1">Welcome!</h1>
+<div class="welcome">
+  <img class="hf-image" src="../images/happyface-min.jpg" alt="Our founder, Happyface">
+  <p class="paragraph">
+    In the summer of 2021, Happyface had a brilliant idea - why not bring the happiness he continually experiences
+    to the seas? Thus Happyface Enterprises was born.
+    <br>
+    <br>
+    Our mission is to spread happiness throughout the world by combining the natural joy of the Happyface with
+    innovative high quality design, sure to make every sailing a joy.
+    <br>
+    <br>
+    For our launch, we are proud to present our patented line of Happyface nautical steering wheels which are sure to bring you
+    happiness at every turn! Be sure to visit our site regularly as we have many more exciting products in the pipeline.
+  </p>
+
+</div>
+
+<div class="find us">
+  <h3 class="heading-3">Find us</h3>
+  <p class="paragraph">
+    Our showroom is open Monday-Saturday between 9:00-17:00. Please do come and visit us to see our wheels for yourself.
+  </p>
+  <div class="map-container">
+    <div class="address">
+      <h4 class="heading-4">Our address:</h4>
+      <div>41 New Bond St</div>
+      <div>London</div>
+      <div>W1S 2SQ</div>
+      <div>United Kingdom</div>
+      <div>Opening hours: Mon-Sat 9:00-17:00</div>
+    </div>
+    <div id="map"></div>
+  </div>
+</div>
+
+<script type="module" src="/javascript/index.js"></script>
+<script>
+  function initMap() {
+    const happyfaceShop = { lat:51.5121, lng: -.1443 };
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 16,
+      center: happyfaceShop,
+    });
+    const marker = new google.maps.Marker({
+      position: happyfaceShop,
+      map: map,
+    });
+  }
+</script>
+<script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnOI4PpwI2lwPEELGVxg33M53SirqGCBM&callback=initMap">
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  margin: 1.5rem 2rem 1.5rem 2rem;
+
+  @media only screen and (max-width: $break-small) {
+    margin: 1.5rem 0 1.5rem 0;
+  }
+
+}
+
+.text-area {
+  resize: none;
+  height: 15rem;
+}
+
+.form-label {
+  width: 80%;
+  font-family: $font-display;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.6rem;
+  align-self: center;
+
+  &--white {
+    color: $color-off-white;
+  }
+}
+
+.form-input {
+  font-size: 1.6rem;
+  font: $font-primary;
+  padding: 1.5rem 1rem;
+  border-radius: 5px;
+  background-color: $color-off-white;
+  border: none;
+  border-bottom: 3px solid transparent;
+  width: 80%;
+  align-self: center;
+
+  @media only screen and (max-width: $break-small) {
+    width: 100%;
+  }
+
+  &--select {
+    border-bottom: none;
+  }
+
+
+
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba($color-black, .1);
+    border-bottom: 3px solid $color-primary;
+    background-color: $color-off-white;
+  }
+
+
+
+  }

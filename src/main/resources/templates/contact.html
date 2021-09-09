@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=0"/>
+  <link rel="stylesheet" href="styling/main.css">
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Raleway&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/558b08b205.js" crossorigin="anonymous"></script>
+  <title>Contact us</title>
+</head>
+<body>
+<div class="header">
+  <ul class="nav-bar">
+    <div class="nav-bar--left">
+      <a href="/"><li class="nav-item" id="about-us">About us</li></a>
+      <a href="/products"><li class="nav-item" id="products">Products</li></a>
+      <a href="/contact"><li class="nav-item" id="contact-us">Contact us</li></a>
+
+    </div>
+    <div class="nav-bar--right">
+
+    </div>
+  </ul>
+</div>
+
+<h1 class="heading-1">Contact us</h1>
+<p class="paragraph">Please use this form to contact us and we will get back to you as soon as possible.</p>
+<div class="contact-us">
+    <form class="form">
+      <div class="input-container">
+        <label for="input-name" class="form-label">Name</label>
+        <input type="text" required autocomplete="off" class="form-input" name="input-name" id="input-name">
+      </div>
+      <div class="input-container">
+        <label for="input-email" class="form-label">Email</label>
+        <input type="email" required autocomplete="off" class="form-input" name="input-email" id="input-email">
+      </div>
+      <div class="input-container">
+        <label for="input-msg" class="form-label">Message</label>
+        <textarea class="form-input text-area" name="input-msg" id="input-msg"></textarea>
+      </div>
+      <p class="paragraph form-msg">Message</p>
+
+      <button type="button" class="btn btn--primary" id="submit-msg">Submit</button>
+
+    </form>
+
+</div>
+
+<script type="module" src="/javascript/contact.js"></script>
+</body>
+</html>

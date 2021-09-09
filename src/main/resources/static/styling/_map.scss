@@ -1,0 +1,8 @@
+#map {
+  height: 400px;
+  width: 100%;
+
+  @media only screen and (max-width: $break-medium) {
+    margin-bottom: 2rem;
+  }
+}
