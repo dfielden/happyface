@@ -29,12 +29,12 @@
   cursor: pointer;
 
   &--selected {
-    background-color: $color-black;
+    background-color: $color-primary-dark;
     color: $color-off-white
   }
 
   &:hover, &:active {
-    background-color: $color-black;
+    background-color: $color-primary;
     color: $color-off-white
   }
 }
