@@ -8,15 +8,17 @@ window.addEventListener('load', e => {
 document.querySelector('#submit-msg').addEventListener('click', async () => {
     const formEl = document.querySelector('.form')
     const name = document.querySelector('#input-name').value;
+    const subject = document.querySelector('#input-subject').value;
+
     const email = document.querySelector('#input-email').value;
     const msg = document.querySelector('#input-msg').value;
 
-    if (!(name && email && msg)) {
+    if (!(name && email && msg && subject)) {
         showFormMessage('please fill in all fields', false, formEl);
         return;
     }
 
-    const post = await AJAX('/message', new ContactUsMessage(name, email, msg));
+    const post = await AJAX('/message', new ContactUsMessage(name, email, subject, msg));
     showFormMessage('Thank you. Your message has been sent and we will be in touch shortly', true, formEl);
     setTimeout(function() {
         window.location.href = '/';

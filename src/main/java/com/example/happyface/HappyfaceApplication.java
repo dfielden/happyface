@@ -1,7 +1,12 @@
 package com.example.happyface;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.google.gson.*;
 
 
+import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -18,6 +24,9 @@ import javax.servlet.http.HttpServletResponse;
 public class HappyfaceApplication {
     private final HappyfaceDB db;
     private static final Gson gson = new Gson();
+
+    @Autowired
+    private JavaMailSender mailSender;
 
 
     public HappyfaceApplication() throws Exception {
@@ -50,6 +59,16 @@ public class HappyfaceApplication {
     @PostMapping("/message")
     public String postMessage(@RequestBody Message message, HttpServletRequest req, HttpServletResponse resp) throws Exception {
         long msgId = db.addMessage(message);
+
+        MimeMessage mimeMessage = mailSender.createMimeMessage();
+        MimeMessageHelper email = new MimeMessageHelper(mimeMessage);
+        email.setFrom(message.getEmail());
+        email.setTo("happyfaceenterprises@gmail.com");
+        email.setSubject("NEW NAUTICAL WHEEL QUERY");
+        email.setText(CreateEmail.createEmail(message), true);
+
+        mailSender.send(mimeMessage);
+
         return gson.toJson(msgId);
     }
 
