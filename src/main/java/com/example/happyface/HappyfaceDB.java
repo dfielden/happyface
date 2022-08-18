@@ -31,7 +31,7 @@ public final class HappyfaceDB {
 
             ResultSet rs = stmt.getGeneratedKeys();
             if (!rs.next()) {
-                throw new IllegalStateException("Unable to get generated key for added Exercise");
+                throw new IllegalStateException("Unable to get generated key for added message");
             }
             return rs.getLong(1);
         }
