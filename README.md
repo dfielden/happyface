@@ -1,4 +1,4 @@
-# happyface
+# site_emailer
 Aim of project was to create a MVP website within a few days for the launch of an imaginary product.
 Technology: Java, Spring Boot, HTML, CSS, JavaScript, SQLite.
 Website contained text and images about the imaginary product and was designed to be responsive to screen size.
